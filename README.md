@@ -125,7 +125,6 @@ See **[SETUP.md](./SETUP.md)** for the complete step-by-step guide including:
 
 - Prerequisites (Claude Code, Node.js 18+, Python 3, Git)
 - Windows path fix for `settings.json`
-- claude-mem installation (persistent cross-session memory)
 - claude-token-lens installation (real-time token cost visibility)
 - Plugin installation inside Claude Code
 - Bootstrap walkthrough (first session)
@@ -144,23 +143,17 @@ cd your-new-project
 # Windows only: open .claude/settings.json
 # Replace every "python3" with "python"
 
-# Install claude-mem (once per machine)
-npx --yes claude-mem install
-
 # Open Claude Code — bootstrap runs automatically on first message
 claude
 ```
 
-Steps after the first project (claude-mem, plugins) are per-machine, not per-project. Starting a second project is just "Use this template" → clone → `claude`.
+Steps after the first project (plugins) are per-machine, not per-project. Starting a second project is just "Use this template" → clone → `claude`.
 
 ---
 
 ## One-time global installs (per machine, not per project)
 
 ```bash
-# Persistent cross-session memory
-npx --yes claude-mem install
-
 # Token cost visibility (run in a separate terminal during sessions)
 npm install -g claude-token-lens
 ```

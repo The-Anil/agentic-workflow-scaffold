@@ -141,12 +141,6 @@ Bootstrap, CONTEXT.md updates, and MEMORY.md writes are skipped. Hooks stay acti
 - Always append: <!-- Updated [YYYY-MM-DD]: [what changed and why] -->
 - Never remove existing rules without asking first
 
-## Memory boundary
-claude-mem captures raw session observations automatically.
-MEMORY.md (written by session-handoff skill) captures structured decisions and next steps.
-These are complementary - claude-mem for recall, MEMORY.md for decisions.
-Do not duplicate decision text into claude-mem; let it capture naturally.
-
 ## STOP - ask before:
 [From user's answer to question 6]
 - Adding any new dependency

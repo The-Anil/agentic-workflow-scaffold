@@ -51,24 +51,7 @@ python
 
 Use Find & Replace in VS Code (Ctrl+H). On Mac/Linux, skip this step.
 
-### Step 4 — Install claude-mem (persistent memory)
-
-Run this in your terminal (not inside Claude Code — it needs an interactive prompt):
-
-```
-npx --yes claude-mem install
-```
-
-Answer the prompts:
-- Work email → press Enter to skip
-- Overwrite existing installation? → Yes
-- Which IDEs? → Claude Code
-- Which runtime? → Worker
-- Which memory provider? → Claude Agent SDK (recommended)
-
-Uses your Pro plan's $20/month Agent SDK credit. No separate API key needed.
-
-### Step 5 — Install claude-token-lens
+### Step 4 — Install claude-token-lens
 
 ```
 npm install -g claude-token-lens
@@ -79,7 +62,7 @@ Run in a separate terminal during sessions to monitor token burn rate:
 claude-token-lens
 ```
 
-### Step 6 — Install plugins inside Claude Code
+### Step 5 — Install plugins inside Claude Code
 
 Open Claude Code in your project directory:
 ```
@@ -104,7 +87,7 @@ If any plugin says "not found":
 ```
 Then retry the install.
 
-### Step 7 — Bootstrap (first project session only)
+### Step 6 — Bootstrap (first project session only)
 
 Start Claude Code and say anything. Claude detects `UNINITIALIZED` in `CLAUDE.md`, runs the bootstrap skill, and asks you 6 questions in one message. You answer, approve the proposed structure, and Claude writes the full `CLAUDE.md` and `CONTEXT.md`. You never touch those files again.
 
@@ -377,9 +360,6 @@ Open a terminal and run `python --version`. If Python isn't found, reinstall it 
 
 **Plugin not found**
 Run `/plugin marketplace update claude-plugins-official` then retry.
-
-**claude-mem hanging**
-Run `npx --yes claude-mem install` directly in your terminal (not inside Claude Code) — it needs an interactive prompt.
 
 **test-gate firing on wrong files**
 Add the file pattern to `SKIP_PATTERNS` in `.claude/hooks/test-gate.py`.

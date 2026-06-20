@@ -49,11 +49,7 @@ Create the file and directory if they don't exist. Prepend - newest entry at top
 - [ ] [Specific enough to start immediately without re-reading history]
 ```
 
-Keep each entry under 50 lines.
-
-**Memory boundary:** Write decisions, patterns, and next steps here.
-Raw observations (file reads, tool calls) are captured automatically by claude-mem.
-Do not re-summarize what claude-mem already captures — focus on WHY decisions were made.
+Keep each entry under 50 lines. Decisions and next steps are more valuable than code summaries — the code is in git, WHY you made a choice is not.
 
 ---
 
