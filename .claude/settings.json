@@ -1,0 +1,59 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "description": "Block reads/writes to secret files (.env, keys, certs)",
+        "matcher": "Read|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/secret-block.py"
+          }
+        ]
+      },
+      {
+        "description": "Block git add . / git add -A (force surgical staging)",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/no-git-add-dot.py"
+          }
+        ]
+      },
+      {
+        "description": "Block production deployment commands",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/prod-guard.py"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "description": "Auto-run tests after any source file edit",
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/test-gate.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "description": "Remind Claude to run session-handoff at session end",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/session-end-reminder.py"
+          }
+        ]
+      }
+    ]
+  }
+}
